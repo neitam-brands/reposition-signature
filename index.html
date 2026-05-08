@@ -127,9 +127,8 @@
 
         /* Preview Styles */
         .signature-container {
-            background: #FFF;
-            border: 1px solid #F0F0F0;
-            padding: 30px;
+            background: #e9ecef;
+            padding: 40px;
             border-radius: 12px;
             margin-bottom: 25px;
             overflow-x: auto;
@@ -140,6 +139,9 @@
         .sig-table {
             border-collapse: collapse;
             font-family: 'Poppins', sans-serif;
+            background-color: var(--brand-navy);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         /* Buttons */
@@ -268,44 +270,51 @@
 
         <!-- Preview Column -->
         <section class="card">
-            <div class="section-title">Live Preview</div>
+            <div class="section-title">Live Preview (Dark Mode)</div>
             
             <div class="signature-container" id="signature-area">
                 <!-- START OF EMAIL TABLE -->
-                <table cellpadding="0" cellspacing="0" border="0" class="sig-table">
+                <table cellpadding="0" cellspacing="0" border="0" class="sig-table" bgcolor="#1C2039" style="background-color: #1C2039; border-radius: 4px;">
                     <tr>
-                        <td style="padding-right: 30px; border-right: 2px solid #C4262E; vertical-align: middle;">
-                            <img src="https://i.ibb.co/C0L6NfS/Reposition-Logo.png" alt="Reposition" width="160" style="display: block; border: 0;">
-                        </td>
-                        <td style="padding-left: 30px; vertical-align: middle; text-align: left;">
-                            <div style="font-family: 'Poppins', sans-serif;">
-                                <div id="display-name" style="font-size: 18px; font-weight: 700; color: #1C2039; margin: 0; line-height: 1.1;">Kimberly Fanelli</div>
-                                <div id="display-title" style="font-size: 14px; font-weight: 500; color: #C4262E; text-transform: uppercase; letter-spacing: 1.2px; margin: 4px 0 14px 0;">Partner</div>
-                                
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <td>
-                                            <a href="tel:+18603043608" id="link-phone" style="text-decoration: none; color: #1C2039; font-size: 13px; display: block; margin: 2px 0;">
-                                                <span id="display-phone">+1.860.304.3608</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="mailto:kim@repositioninc.com" id="link-email" style="text-decoration: none; color: #1C2039; font-size: 13px; display: block; margin: 2px 0;">
-                                                <span id="display-email">kim@repositioninc.com</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="https://www.repositioninc.com" style="text-decoration: none; color: #C4262E; font-size: 13px; font-weight: 600; display: block; margin-top: 8px;">
-                                                www.repositioninc.com
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                        <td style="padding: 25px 30px; vertical-align: middle;">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-right: 30px; border-right: 2px solid #C4262E; vertical-align: middle;">
+                                        <!-- Using RAW link from GitHub for the image to render correctly -->
+                                        <img src="https://raw.githubusercontent.com/neitam-brands/reposition-signature/main/repositioninc-logo.png" alt="Reposition" width="160" style="display: block; border: 0;">
+                                    </td>
+                                    <td style="padding-left: 30px; vertical-align: middle; text-align: left;">
+                                        <div style="font-family: 'Poppins', sans-serif;">
+                                            <div id="display-name" style="font-size: 18px; font-weight: 700; color: #FFFFFF; margin: 0; line-height: 1.1;">Kimberly Fanelli</div>
+                                            <div id="display-title" style="font-size: 14px; font-weight: 500; color: #C4262E; text-transform: uppercase; letter-spacing: 1.2px; margin: 4px 0 14px 0;">Partner</div>
+                                            
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td>
+                                                        <a href="tel:+18603043608" id="link-phone" style="text-decoration: none; color: #FFFFFF; font-size: 13px; display: block; margin: 2px 0; opacity: 0.9;">
+                                                            <span id="display-phone">+1.860.304.3608</span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="mailto:kim@repositioninc.com" id="link-email" style="text-decoration: none; color: #FFFFFF; font-size: 13px; display: block; margin: 2px 0; opacity: 0.9;">
+                                                            <span id="display-email">kim@repositioninc.com</span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="https://www.repositioninc.com" style="text-decoration: none; color: #C4262E; font-size: 13px; font-weight: 600; display: block; margin-top: 8px;">
+                                                            www.repositioninc.com
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>
@@ -326,19 +335,16 @@
 
     <script>
         function updateSignature() {
-            // Get values from inputs
             const name = document.getElementById('input-name').value || 'Full Name';
             const title = document.getElementById('input-title').value || 'Job Title';
             const phone = document.getElementById('input-phone').value || '+1.000.000.0000';
             const email = document.getElementById('input-email').value || 'email@repositioninc.com';
 
-            // Update display elements
             document.getElementById('display-name').textContent = name;
             document.getElementById('display-title').textContent = title;
             document.getElementById('display-phone').textContent = phone;
             document.getElementById('display-email').textContent = email;
 
-            // Update links
             document.getElementById('link-phone').href = 'tel:' + phone.replace(/[^0-9+]/g, '');
             document.getElementById('link-email').href = 'mailto:' + email;
         }
