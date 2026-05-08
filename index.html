@@ -55,16 +55,16 @@
 
         main {
             flex: 1;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: -30px auto 40px;
             width: 100%;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 350px 1fr;
             gap: 30px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 950px) {
             main {
                 grid-template-columns: 1fr;
             }
@@ -127,21 +127,21 @@
 
         /* Preview Styles */
         .signature-container {
-            background: #e9ecef;
-            padding: 40px;
+            background: #ffffff; /* Fundo branco limpo para o preview não enganar */
+            padding: 60px 20px;
             border-radius: 12px;
             margin-bottom: 25px;
             overflow-x: auto;
             display: flex;
             justify-content: center;
+            border: 1px solid #EEE;
         }
 
         .sig-table {
             border-collapse: collapse;
             font-family: 'Poppins', sans-serif;
             background-color: var(--brand-navy);
-            border-radius: 8px;
-            overflow: hidden;
+            border-radius: 4px;
         }
 
         /* Buttons */
@@ -265,47 +265,52 @@
                     <li>Click <strong>Copy Signature</strong>.</li>
                     <li>Paste it into your email settings (Ctrl+V or Cmd+V).</li>
                 </ol>
+                <p style="margin-top: 15px; font-size: 11px; color: var(--brand-red); font-weight: 600;">
+                    Note: Ensure your logo image is a transparent PNG to avoid unwanted background boxes.
+                </p>
             </div>
         </section>
 
         <!-- Preview Column -->
         <section class="card">
-            <div class="section-title">Live Preview (Dark Mode)</div>
+            <div class="section-title">Live Preview (Large Edition)</div>
             
             <div class="signature-container" id="signature-area">
                 <!-- START OF EMAIL TABLE -->
-                <table cellpadding="0" cellspacing="0" border="0" class="sig-table" bgcolor="#1C2039" style="background-color: #1C2039; border-radius: 4px;">
+                <!-- No outer spacing or background on cells to avoid gray borders -->
+                <table cellpadding="0" cellspacing="0" border="0" class="sig-table" width="520" bgcolor="#1C2039" style="background-color: #1C2039; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 520px; border-radius: 4px;">
                     <tr>
-                        <td style="padding: 25px 30px; vertical-align: middle;">
-                            <table cellpadding="0" cellspacing="0" border="0">
+                        <td style="padding: 35px 40px; vertical-align: middle; background-color: #1C2039;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse;">
                                 <tr>
-                                    <td style="padding-right: 30px; border-right: 2px solid #C4262E; vertical-align: middle;">
-                                        <!-- Using RAW link from GitHub for the image to render correctly -->
-                                        <img src="https://raw.githubusercontent.com/neitam-brands/reposition-signature/main/repositioninc-logo.png" alt="Reposition" width="160" style="display: block; border: 0;">
+                                    <!-- Logo cell -->
+                                    <td width="200" style="padding-right: 35px; border-right: 2px solid #C4262E; vertical-align: middle; width: 200px; background-color: #1C2039;">
+                                        <img src="https://raw.githubusercontent.com/neitam-brands/reposition-signature/main/repositioninc-logo.png" alt="Reposition" width="200" style="display: block; border: 0; width: 200px; background: none; outline: none; text-decoration: none;">
                                     </td>
-                                    <td style="padding-left: 30px; vertical-align: middle; text-align: left;">
-                                        <div style="font-family: 'Poppins', sans-serif;">
-                                            <div id="display-name" style="font-size: 18px; font-weight: 700; color: #FFFFFF; margin: 0; line-height: 1.1;">Kimberly Fanelli</div>
-                                            <div id="display-title" style="font-size: 14px; font-weight: 500; color: #C4262E; text-transform: uppercase; letter-spacing: 1.2px; margin: 4px 0 14px 0;">Partner</div>
+                                    <!-- Text cell -->
+                                    <td style="padding-left: 35px; vertical-align: middle; text-align: left; background-color: #1C2039;">
+                                        <div style="font-family: 'Poppins', Helvetica, Arial, sans-serif;">
+                                            <div id="display-name" style="font-size: 22px; font-weight: 700; color: #FFFFFF; margin: 0; line-height: 1.1;">Kimberly Fanelli</div>
+                                            <div id="display-title" style="font-size: 15px; font-weight: 500; color: #C4262E; text-transform: uppercase; letter-spacing: 1.5px; margin: 6px 0 16px 0;">Partner</div>
                                             
-                                            <table cellpadding="0" cellspacing="0" border="0">
+                                            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
                                                 <tr>
                                                     <td>
-                                                        <a href="tel:+18603043608" id="link-phone" style="text-decoration: none; color: #FFFFFF; font-size: 13px; display: block; margin: 2px 0; opacity: 0.9;">
+                                                        <a href="tel:+18603043608" id="link-phone" style="text-decoration: none; color: #FFFFFF; font-size: 14px; display: block; margin: 3px 0; opacity: 0.9;">
                                                             <span id="display-phone">+1.860.304.3608</span>
                                                         </a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <a href="mailto:kim@repositioninc.com" id="link-email" style="text-decoration: none; color: #FFFFFF; font-size: 13px; display: block; margin: 2px 0; opacity: 0.9;">
+                                                        <a href="mailto:kim@repositioninc.com" id="link-email" style="text-decoration: none; color: #FFFFFF; font-size: 14px; display: block; margin: 3px 0; opacity: 0.9;">
                                                             <span id="display-email">kim@repositioninc.com</span>
                                                         </a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <a href="https://www.repositioninc.com" style="text-decoration: none; color: #C4262E; font-size: 13px; font-weight: 600; display: block; margin-top: 8px;">
+                                                        <a href="https://www.repositioninc.com" style="text-decoration: none; color: #C4262E; font-size: 14px; font-weight: 700; display: block; margin-top: 10px;">
                                                             www.repositioninc.com
                                                         </a>
                                                     </td>
